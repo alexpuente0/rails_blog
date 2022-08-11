@@ -3,7 +3,6 @@ class Comment < ApplicationRecord
   belongs_to :post, class_name: 'Post'
   after_save :update_comment_count
 
-
   private
 
   def update_comment_count
