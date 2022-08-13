@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   user_valid = User.new(name: 'Luke', photo: 'photo_URL', bio: 'Test Dummy', post_counter: 4)
   user_invalid_name = User.new(name: nil, photo: 'photo_URL', bio: 'Test Dummy', post_counter: 1)
   user_invalid_post = User.new(name: 'Han', photo: 'photo_URL', bio: 'Test Dummy', post_counter: 'four')
