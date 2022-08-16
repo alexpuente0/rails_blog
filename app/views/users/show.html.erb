@@ -1,0 +1,10 @@
+<h1> Selected user's Info: <h1>
+
+<%= @user.each do |user| %>
+<h2>ID: <%=user.id%></h2>
+<h2>Name: <%=user.name%> </h2>
+<h2>About me: <%=user.bio%></h2>
+<%= link_to user_posts_path(user) do%>
+<h2>Post count: <%=user.post_counter%></h2>
+<% end %> 
+<% end %>
