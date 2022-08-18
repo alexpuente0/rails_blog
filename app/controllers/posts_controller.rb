@@ -6,6 +6,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(author_id: params[:user_id], id: params[:id])
-     @user = User.where(id: params[:user_id]).first
+    @user = User.where(id: params[:user_id]).first
   end
 end
