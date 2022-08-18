@@ -1,0 +1,8 @@
+      <a <%=post.id%>>
+        <h2>Post: #<%=post.id%></h2>
+        <h3><%= post.title%></h3>
+        <p><%= post.text%></p>
+        <div>
+          <p>comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></p>
+        </div>
+      </a>
