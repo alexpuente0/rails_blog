@@ -15,13 +15,13 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'renders and placeholder matches content' do
-      expect(response.body).to include 'by User'
+      expect(response.body).to include 'All posts'
     end
   end
 
   describe 'GET user page #show' do
     before(:each) do
-      get '/users/3/posts/2'
+      get '/users/3/posts/6'
     end
 
     it 'shows selected post successfully' do
