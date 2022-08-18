@@ -5,7 +5,8 @@
 <h3>Bio: </h3>
 <p><%=@user.bio%></p>
 <div>
-<%@posts.each do |post|%>
+<% posts = @user.recent_posts%>
+<%posts.each do |post|%>
     <%= render 'shared/post', post: post%>
     <%end%>
   <%= link_to user_posts_path(@user) do%> 
