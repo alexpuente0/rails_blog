@@ -23,15 +23,15 @@ RSpec.describe 'Users', type: :request do
     before(:each) do
       get '/users/3'
     end
-#f
+
     it 'shows selected user successfully' do
       expect(response).to have_http_status(:ok)
     end
-#F
+
     it 'renders template correctly' do
       expect(response).to render_template('show')
     end
-#F
+
     it 'renders and placeholder matches content' do
       expect(response.body).to include 'Selected user'
     end
