@@ -1,14 +1,25 @@
 <h1> Your selected Post </h1>
 
+<div>
 <h3>Post #<%=@post.id%> by <%=@user.name%></h3>
 <p>comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></p>
 <h2><%=@post.text%></h2>
+</div>
 
+  <div>
+    <% @comments = @post.comments%>
+    <% @comments.each do |comment|%>
+    <% comenter = User.find_by(id: comment.author_id) %>
+    <%=comenter.name%> : <%=comment.text%>
+    <%end%>
+  </div>
 
-     <div>
-        <% @comments = @post.comments%>
-      <% @comments.each do |comment|%>
-      <% comenter = User.find_by(id: comment.author_id) %>
-      <%=comenter.name%> : <%=comment.text%>
-      <%end%>
-      </div>
+<div>
+    <%=link_to new_user_post_comment_path(@post.author.id, @post.id) do%>
+     <button type='button'> Add new comment </button>
+    <%end%>
+    <br>
+    <%=form_with url: user_post_likes_path(@post.author, @post) do |form|%>
+      <%= form.submit "Like this Post 👍" %>
+    <%end%>
+  </div>
