@@ -14,11 +14,12 @@ first_post = Post.create(author_id: first_user.id, title: "Hello", text: "This i
 second_post = Post.create(author_id: first_user.id, title: "Hello", text: "This is my second post", comments_counter: 0, likes_counter: 0)
 third_post = Post.create(author_id: first_user.id, title: "Hello", text: "This is my third post", comments_counter: 0, likes_counter: 0)
 fourth_post = Post.create(author_id: first_user.id, title: "Hello", text: "This is my fourth post", comments_counter: 0, likes_counter: 0)
+fifth_post = Post.create(author_id: second_user.id, title: "Hi there", text: "This is my own post", comments_counter: 0, likes_counter: 0)
 
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: "Hi!")
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: "Hello!")
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: "Hey there!")
-Comment.create(post_id: first_post.id, author_id: second_user.id, text: "Hiii!")
-Comment.create(post_id: first_post.id, author_id: second_user.id, text: "How you doing?")
-Comment.create(post_id: first_post.id, author_id: second_user.id, text: "Aloha")
+Comment.create(post_id: first_post.id, author_id: third_user.id, text: "Hiii!")
+Comment.create(post_id: first_post.id, author_id: third_user.id, text: "How you doing?")
+Comment.create(post_id: first_post.id, author_id: third_user.id, text: "Aloha")
 
