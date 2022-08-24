@@ -49,9 +49,9 @@ RSpec.describe User, type: :model do
     @this_user.post_counter = 0
     @this_user.save
     Post.create(author: @this_user, title: 'Title1', text: 'Text1', comments_counter: 0, likes_counter: 0)
-    post2 = Post.create(author: @this_user, title: 'Title2', text: 'Text2', comments_counter: 0, likes_counter: 0)
-    post3 = Post.create(author: @this_user, title: 'Title3', text: 'Text3', comments_counter: 0, likes_counter: 0)
-    post4 = Post.create(author: @this_user, title: 'Title4', text: 'Text4', comments_counter: 0, likes_counter: 0)
+    Post.create(author: @this_user, title: 'Title2', text: 'Text2', comments_counter: 0, likes_counter: 0)
+    Post.create(author: @this_user, title: 'Title3', text: 'Text3', comments_counter: 0, likes_counter: 0)
+    Post.create(author: @this_user, title: 'Title4', text: 'Text4', comments_counter: 0, likes_counter: 0)
     expect(@this_user.post_counter).to eq(4)
   end
 end

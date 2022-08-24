@@ -85,15 +85,15 @@ RSpec.describe Post, type: :model do
     @this_post.comments_counter = 0
     @this_post.save
     Comment.create(author: @this_user, post: @this_post, text: 'Text1')
-    comment2 = Comment.create(author: @this_user, post: @this_post, text: 'Text2')
-    comment3 = Comment.create(author: @this_user, post: @this_post, text: 'Text3')
-    comment4 = Comment.create(author: @this_user, post: @this_post, text: 'Text4')
-    comment5 = Comment.create(author: @this_user, post: @this_post, text: 'Text5')
-    comment6 = Comment.create(author: @this_user, post: @this_post, text: 'Text6')
-    comment7 = Comment.create(author: @this_user, post: @this_post, text: 'Text7')
-    comment8 = Comment.create(author: @this_user, post: @this_post, text: 'Text8')
-    comment9 = Comment.create(author: @this_user, post: @this_post, text: 'Text9')
-    comment10 = Comment.create(author: @this_user, post: @this_post, text: 'Text10')
+    Comment.create(author: @this_user, post: @this_post, text: 'Text2')
+    Comment.create(author: @this_user, post: @this_post, text: 'Text3')
+    Comment.create(author: @this_user, post: @this_post, text: 'Text4')
+    Comment.create(author: @this_user, post: @this_post, text: 'Text5')
+    Comment.create(author: @this_user, post: @this_post, text: 'Text6')
+    Comment.create(author: @this_user, post: @this_post, text: 'Text7')
+    Comment.create(author: @this_user, post: @this_post, text: 'Text8')
+    Comment.create(author: @this_user, post: @this_post, text: 'Text9')
+    Comment.create(author: @this_user, post: @this_post, text: 'Text10')
     expect(@this_post.recent_comments.length).to eq(5)
   end
 
