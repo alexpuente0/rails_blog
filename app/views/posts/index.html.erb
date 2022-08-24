@@ -5,15 +5,14 @@
   
 <% @posts.each do |post| %>
    <%= render 'shared/post', post: post%>
- 
       <div>
-        <% @comments = post.recent_comments%>
-        <% @comments.each do |comment|%>
-          <% comenter = User.find_by(id: comment.author_id) %>
-          <%=comenter.name%> : <%=comment.text%>
+        <% post.recent_comments.includes(:author).each do |comment| %>
+        <%=comment.author.name%> : <%=comment.text%>
         <% end %> 
+
  <%= link_to user_post_path(post.author_id, post.id) do %>
   <button type='button'>See full Post</button>
       </div>
     <% end %> 
-<%end%>
+<%end %>
+<button type='button'>Pagination</button>
