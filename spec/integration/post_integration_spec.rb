@@ -23,7 +23,7 @@ RSpec.describe 'Index/Show Posts page.', type: :system do
 
     it 'Shows user\'s profile picture' do
       image = page.all('img')
-      expect(image[0]['src']).to eq('https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png')
+      expect(image[0]['src']).to eq(user.photo)
     end
 
     it 'Shows user\'s username' do
