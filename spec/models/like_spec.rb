@@ -5,6 +5,13 @@ RSpec.describe Like, type: :model do
   this_post = Post.new(author: this_user, title: 'New post', text: 'Bla bla bla', comments_counter: 0, likes_counter: 1)
   like = Like.new(author: this_user, post: this_post)
 
+  after(:all) do
+    Like.destroy_all
+    Comment.destroy_all
+    Post.destroy_all
+    User.destroy_all
+  end
+
   context 'Like Validation' do
     it 'Creates a like in a post' do
       expect(like).to be_valid
