@@ -10,5 +10,4 @@ class ApplicationController < ActionController::Base
     # sign up parameters.
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
-
 end
