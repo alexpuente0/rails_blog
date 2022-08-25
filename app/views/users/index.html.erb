@@ -1,10 +1,6 @@
 <h1> List of current Users </h1>
 
-  <div>
-    <%=link_to new_post_path do%>
-      <button type='button'>Make new post</button>
-    <%end%>
-  </div>
+<%= render 'shared/buttons', post: @post%>
 
 <% @users.each do |user| %>
   <%= link_to user_path(user.id) do %>
