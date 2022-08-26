@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-first_user = User.create!(name: "Tony", photo: "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png", bio: "A man covered in Iron", post_counter: 0, password: 'generic', email: 'email@generic.com')
-second_user = User.create!(name: "Clint", photo: "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png", bio: "Throwing pointy sticks as far as possible", post_counter: 0, password: 'hawkeye', email: 'email2@eneric.com')
-third_user = User.create!(name: "Bruce", photo: "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png", bio: "Big, mean and green", post_counter: 0, password: 'incredible', email: 'email3@eneric.com')
-fourth_user = User.create!(name: "Thor", photo: "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png", bio: "Literally the god of thunder", post_counter: 0, password: 'mjolnir', email: 'email4@eneric.com')
-fifth_user = User.create!(name: "Nat", photo: "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png", bio: "Spider themed spy and assassin", post_counter: 0, password: 'thewidow', email: 'email5@eneric.com')
-sixth_user = User.create!(name: "Steve", photo: "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png", bio: "Old man fan of stripes and stars", post_counter: 0, password: 'capitan', email: 'email6@eneric.com')
+first_user = User.create!(name: "Tony", photo: "https://cdn2.chicmagazine.com.mx/uploads/media/2021/04/01/robert-downey-jr-iron-man.jpg", bio: "A man covered in Iron", post_counter: 0, password: 'generic', email: 'email@generic.com', role: 'admin')
+second_user = User.create!(name: "Clint", photo: "https://depor.com/resizer/5gRn6m364LnXQ9YqrPaMrOe37Is=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/M2VGSL6T65FBBKGKVVMBVHOJTY.jpg", bio: "Throwing pointy sticks as far as possible", post_counter: 0, password: 'hawkeye', email: 'email2@eneric.com')
+third_user = User.create!(name: "Bruce", photo: "https://www.cinemascomics.com/wp-content/uploads/2020/02/she-hulk-mark-ruffalo-960x540.jpg.webp", bio: "Big, mean and green", post_counter: 0, password: 'incredible', email: 'email3@eneric.com')
+fourth_user = User.create!(name: "Thor", photo: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/thor-1653380224.jpg?resize=768:*", bio: "Literally the god of thunder", post_counter: 0, password: 'mjolnir', email: 'email4@eneric.com')
+fifth_user = User.create!(name: "Nat", photo: "https://elcomercio.pe/resizer/8m9tP-SliekerO1J3Mme4koGZt0=/1200x1200/smart/filters:format(jpeg):quality(75)/cdn.jwplayer.com/v2/media/pXJ6Jcyq/poster.jpg", bio: "Spider themed spy and assassin", post_counter: 0, password: 'thewidow', email: 'email5@eneric.com')
+sixth_user = User.create!(name: "Steve", photo: "https://images-na.ssl-images-amazon.com/images/I/91kaC8fv20L.__AC_SY300_SX300_QL70_FMwebp_.jpg", bio: "Old man fan of stripes and stars", post_counter: 0, password: 'capitan', email: 'email6@eneric.com')
 
 apost = Post.create!(author_id: first_user.id, title: 'Why do we use it?', text: ' is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using , making it look like readab')
 bpost = Post.create(author_id: second_user.id, title: 'Where does it come from? ', text: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for')
