@@ -13,10 +13,10 @@
  *= require_tree .
  *= require_self
  */
-  * {
+* {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   text-decoration: none;
   color: black;
 }
@@ -34,15 +34,15 @@
   object-fit: cover;
   width: 150px;
   height: 150px;
-  filter: drop-shadow( -5px 5px 5px rgba(0, 0, 0, 0.507));
+  filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.507));
   border-radius: 50%;
 }
 
 .usernan {
   display: flex;
-   border: 3px solid black;
-   width: 100%;
-   justify-content: space-between;
+  border: 3px solid black;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .username {
@@ -75,7 +75,7 @@
 }
 
 .navigation a {
-    padding-right: 15px;
+  padding-right: 15px;
 }
 
 .userinfo {
