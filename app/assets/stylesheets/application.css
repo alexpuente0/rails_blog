@@ -17,6 +17,8 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+  color: black;
 }
 
 .usercard {
@@ -63,6 +65,13 @@
 
 .navigation {
   align-self: center;
+}
+
+.logeduser {
+  display: flex;
+  background-color: #c0c0c071;
+  justify-content: center;
+  padding-top: 5px;
 }
 
 .navigation a {
@@ -121,6 +130,9 @@
   height: 50px;
   width: 180px;
   text-align: center;
+  text-decoration: none;
+  color: black;
+  line-height: 150%;
 }
 
 .buttonlink a {
