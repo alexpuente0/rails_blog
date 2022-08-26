@@ -11,5 +11,4 @@ class Comment < ApplicationRecord
   end
 
   :update_comment_count
-
 end

@@ -30,7 +30,6 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    #return unless can? :destroy, @post
 
     @post.destroy
     redirect_to root_path

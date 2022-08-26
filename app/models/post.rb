@@ -20,5 +20,4 @@ class Post < ApplicationRecord
   end
 
   :update_post_count
-
 end
