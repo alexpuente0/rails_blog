@@ -11,21 +11,26 @@
 </div>
 
   <div class="commentlist">
-    <% @comments = @post.comments%>
+    <% @comments = @post.comments.includes([:author])%>
     <% @comments.each do |comment|%>
     <% comenter = User.find_by(id: comment.author_id) %>
     <p><%=comenter.name%>: <%=comment.text%></p>
     
+     <% if can? :destroy, comment %>
+       <%= button_to 'X', user_post_comment_path(comment.author.id, @post.id, comment), class: "buttonx", method: :delete %>
+      <% end %>
+      
     <%end%>
   </div>
 
-<div class="lc_buttons">
-<button type="button" class="buttonlink">
-    <%=link_to "Add new comment", new_user_post_comment_path(@post.author.id, @post.id) %>
-</button>
+  <div class="lc_buttons">
+    <%=link_to "Comment", new_user_post_comment_path(@post.author.id, @post.id), class: "buttonlink" %>
+  
+  <%=form_with url: user_post_likes_path(@post.author, @post) do |form|%>
+    <%= form.submit "Like 👍", class: "buttonlink" %>
+  <%end%>
 
-
-    <%=form_with url: user_post_likes_path(@post.author, @post) do |form|%>
-      <%= form.submit "Like this Post 👍", class: "buttonlink" %>
-    <%end%>
+  <% if can? :destroy, @post %>
+    <%= button_to 'Delete', post_path(@post.id), method: :delete, class: "buttonlink" %>
+  <% end %>
   </div>
