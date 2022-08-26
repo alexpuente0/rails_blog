@@ -1,12 +1,13 @@
 <h1>All posts by <%= @user.name %></h1>
 
+<%= render 'shared/buttons', post: @post%>
 <%= render 'shared/userhead', user: @user%>
 
   
 <% @posts.each do |post| %>
    <%= render 'shared/post', post: post%>
       <div>
-        <% post.recent_comments.includes(:author).each do |comment| %>
+        <% post.recent_comments.each do |comment| %>
         <%=comment.author.name%> : <%=comment.text%>
         <% end %> 
 

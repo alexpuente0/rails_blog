@@ -1,15 +1,21 @@
-<h1> Selected user's Info: <h1>
+<div class="toptext">
+<h1> User's Info</h1>
+
+<%= render 'shared/buttons', post: @post%>
+</div>
 
     <%= render 'shared/userhead', user: @user%>
 
+<div class="bio">
 <h3>Bio: </h3>
 <p><%=@user.bio%></p>
-<div>
+</div>
+<div class="allposts">
 <% posts = @user.recent_posts%>
 <%posts.each do |post|%>
     <%= render 'shared/post', post: post%>
     <%end%>
-  <%= link_to user_posts_path(@user) do%> 
-  <button type='button'>See all posts</button>
+<div class="buttonlink">
+  <%= link_to "See all posts", user_posts_path(@user) %> 
 </div>
-<% end %>
+</div>

@@ -1,5 +1,7 @@
 <h1> Your selected Post </h1>
 
+<%= render 'shared/buttons', post: @post%>
+
 <div>
 <h3>Post #<%=@post.id%> by <%=@user.name%></h3>
 <p>comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></p>
