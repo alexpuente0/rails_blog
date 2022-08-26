@@ -13,3 +13,151 @@
  *= require_tree .
  *= require_self
  */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: none;
+  color: black;
+}
+
+.usercard {
+  display: flex;
+  margin: 0 auto;
+  padding: 30px 0;
+  align-items: center;
+  width: 90%;
+  gap: 30px;
+}
+
+.profilepic {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.507));
+  border-radius: 50%;
+}
+
+.usernan {
+  display: flex;
+  border: 3px solid black;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.username {
+  padding: 50px;
+  font-size: 30px;
+}
+
+.postno {
+  align-self: flex-end;
+  padding: 50px 15px 10px 0;
+}
+
+.toptext {
+  display: flex;
+  padding: 20px 30px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #c0c0c071;
+}
+
+.navigation {
+  align-self: center;
+}
+
+.logeduser {
+  display: flex;
+  background-color: #c0c0c071;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.navigation a {
+  padding-right: 15px;
+}
+
+.userinfo {
+  display: flex;
+}
+
+.bio {
+  border: 3px solid black;
+  margin: 0 auto;
+  padding: 20px 15px;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 25px;
+}
+
+.bio p {
+  margin-top: 30px;
+}
+
+.post {
+  border: 3px solid black;
+  margin: 10px auto;
+  padding: 20px 15px;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 5px;
+}
+
+.posthead {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.candl {
+  display: flex;
+  justify-content: end;
+  padding-top: 15px;
+}
+
+.allposts {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonlink {
+  border: 3px solid black;
+  padding: 10px 10px;
+  background-color: white;
+  align-self: center;
+  margin: 20px 0 40px 0;
+  height: 50px;
+  width: 180px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  line-height: 150%;
+}
+
+.buttonlink a {
+  text-decoration: none;
+  color: black;
+}
+
+.commentlist {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  margin: 0 auto;
+  padding: 20px 15px;
+  width: 90%;
+  margin-bottom: 30px;
+}
+
+.postshow {
+  margin-top: 30px;
+}
+
+.lc_buttons {
+  display: flex;
+  margin: 0 auto;
+  padding: 20px 15px;
+  width: 90%;
+  justify-content: space-evenly;
+}
