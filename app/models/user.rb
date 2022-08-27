@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
+  after_create :generate_api_token       
+
   has_many :comments, class_name: 'Comment', foreign_key: 'author_id', dependent: :delete_all
   has_many :likes, class_name: 'Likes', foreign_key: 'author_id', dependent: :delete_all
   has_many :posts, class_name: 'Post', foreign_key: 'author_id', dependent: :delete_all
@@ -14,4 +16,10 @@ class User < ApplicationRecord
   def recent_posts
     posts.order(created_at: :desc).limit(3)
   end
+
+  private
+    def generate_api_token
+      self.api_token = Devise.friendly_token
+      self.save
+    end
 end

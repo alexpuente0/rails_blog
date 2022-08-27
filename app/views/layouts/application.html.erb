@@ -21,10 +21,7 @@
     <p class="logeduser"> Welcome, <%= current_user.name %>! 
     </p>
   <% end %>
-  <% else %>
-   <%= link_to "Sign up", new_user_registration_path %> |
-    <%= link_to "Login", new_user_session_path %>
-  <%end %>
+    <%end %>
   </p>
 
     <p class="notice"><%= notice %></p>

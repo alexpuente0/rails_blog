@@ -15,7 +15,7 @@
 <%posts.each do |post|%>
     <%= render 'shared/post', post: post%>
     <%end%>
-<div class="buttonlink">
-  <%= link_to "See all posts", user_posts_path(@user) %> 
+<div class="lc_buttons">
+  <%= link_to "See all posts", user_posts_path(@user), class: "buttonlink" %>
 </div>
 </div>
