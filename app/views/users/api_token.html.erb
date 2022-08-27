@@ -1,0 +1,20 @@
+<div class="toptext">
+<h1> User's Info</h1>
+
+<%= render 'shared/buttons', post: @post%>
+</div>
+
+<h2>Here is your API Token:</h2>
+<br>
+<div>
+<h3> <%= @user.api_token %> </h3>
+<br>
+<p>
+It contains the security credentials for your session, it identifies YOU as Your User in this App <br>
+and Your user/admin privileges. With it, you can access the information in the database
+to be used with an API.
+</p>
+<br>
+</div>
+
+<h2>Keep it safe.</h2>

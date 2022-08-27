@@ -13,8 +13,7 @@
   <div class="commentlist">
     <% @comments = @post.comments.includes([:author])%>
     <% @comments.each do |comment|%>
-    <% comenter = User.find_by(id: comment.author_id) %>
-    <p><%=comenter.name%>: <%=comment.text%></p>
+    <p><%=comment.author.name%>: <%=comment.text%></p>
     
      <% if can? :destroy, comment %>
        <%= button_to 'X', user_post_comment_path(comment.author.id, @post.id, comment), class: "buttonx", method: :delete %>
