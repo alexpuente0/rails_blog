@@ -88,3 +88,5 @@ gem 'letter_opener', '~> 1.8'
 gem 'cancancan', '~> 3.4'
 
 gem 'rabl', '~> 0.16.0'
+
+gem 'rswag'
