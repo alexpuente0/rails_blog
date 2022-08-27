@@ -1,12 +1,15 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @user = User.where(id: params[:user_id]).first
+    @user = User.find(params[:user_id])
     @posts = Post.where(author_id: params[:user_id])
   end
 
   def show
-    @post = Post.find_by(author_id: params[:user_id], id: params[:id])
-    @user = User.where(id: params[:user_id]).first
+    @post = Post.find(params[:id])
+    @comments = @post.comments.includes(:author)
+    @user = @post.author
   end
 
   def new
@@ -23,5 +26,12 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+
+    @post.destroy
+    redirect_to root_path
   end
 end

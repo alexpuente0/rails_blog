@@ -1,16 +1,17 @@
-<h1> List of current Users </h1>
+<div class="toptext">
+  <h1> List of current Users </h1>
 
-  <div>
-    <%=link_to new_post_path do%>
-      <button type='button'>Make new post</button>
-    <%end%>
-  </div>
+  <%= render 'shared/buttons', post: @post%>
+</div>
 
 <% @users.each do |user| %>
   <%= link_to user_path(user.id) do %>
-   <img src="<%= user.photo %>" alt="user image"/>
-  <h2><%= user.name %></h2>
-  <h4>Number of Posts: <%=user.post_counter%></h4>
-  <hr>
+<div class="usercard">
+   <img class="profilepic" src="<%= user.photo %>" alt="user image"/>
+  <div class="usernan">
+  <h2 class="username"><%= user.name %></h2>
+  <h4 class="postno">Number of Posts: <%=user.post_counter%></h4>
+  </div>
+</div>
   <% end %> 
 <% end %> 

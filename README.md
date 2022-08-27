@@ -36,10 +36,12 @@ ruby rails_blog.rb
 
 ### Testing
 
-Type these commands into the terminal:
+Run the Rails Server
+
+When server is running, type these command into the terminal:
 
 ```
-rspec
+rspec spec
 ```
 
 ## Authors

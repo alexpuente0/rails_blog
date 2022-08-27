@@ -11,6 +11,22 @@
   </head>
 
   <body>
+
+<% if user_signed_in? %>
+  <% if current_user.role == 'admin' %>
+    <p class="logeduser"> 
+    Welcome, <%= current_user.name %>! (Logged as:  <b> Admin</b>)
+    </p>
+  <% else %>
+    <p class="logeduser"> Welcome, <%= current_user.name %>! 
+    </p>
+  <% end %>
+    <%end %>
+  </p>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>

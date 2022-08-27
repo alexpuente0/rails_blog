@@ -1,25 +1,35 @@
+<div class="toptext">
 <h1> Your selected Post </h1>
 
-<div>
+<%= render 'shared/buttons', post: @post%>
+</div>
+
+<div class="post postshow">
 <h3>Post #<%=@post.id%> by <%=@user.name%></h3>
-<p>comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></p>
+<p class="candl">comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></p>
 <h2><%=@post.text%></h2>
 </div>
 
-  <div>
-    <% @comments = @post.comments%>
+  <div class="commentlist">
+    <% @comments = @post.comments.includes([:author])%>
     <% @comments.each do |comment|%>
-    <% comenter = User.find_by(id: comment.author_id) %>
-    <%=comenter.name%> : <%=comment.text%>
+    <p><%=comment.author.name%>: <%=comment.text%></p>
+    
+     <% if can? :destroy, comment %>
+       <%= button_to 'X', user_post_comment_path(comment.author.id, @post.id, comment), class: "buttonx", method: :delete %>
+      <% end %>
+      
     <%end%>
   </div>
 
-<div>
-    <%=link_to new_user_post_comment_path(@post.author.id, @post.id) do%>
-     <button type='button'> Add new comment </button>
-    <%end%>
-    <br>
-    <%=form_with url: user_post_likes_path(@post.author, @post) do |form|%>
-      <%= form.submit "Like this Post 👍" %>
-    <%end%>
+  <div class="lc_buttons">
+    <%=link_to "Comment", new_user_post_comment_path(@post.author.id, @post.id), class: "buttonlink" %>
+  
+  <%=form_with url: user_post_likes_path(@post.author, @post) do |form|%>
+    <%= form.submit "Like 👍", class: "buttonlink" %>
+  <%end%>
+
+  <% if can? :destroy, @post %>
+    <%= button_to 'Delete', post_path(@post.id), method: :delete, class: "buttonlink" %>
+  <% end %>
   </div>
